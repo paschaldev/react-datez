@@ -99,7 +99,7 @@ class ReactDatez extends Component {
         const months = []
 
         for (let i = 1; i < 13; i += 1) {
-            months.push(<a href="" className="rdatez-month" key={`${this.state.currentMonthYear}-months-${i}`} onClick={e => this.clickMonth(e, i)}>{moment(i, 'M').format('MMM')}</a>)
+            months.push(<button className="rdatez-month" key={`${this.state.currentMonthYear}-months-${i}`} onClick={e => this.clickMonth(e, i)}>{moment(i, 'M').format('MMM')}</button>)
         }
 
         return months
@@ -109,7 +109,7 @@ class ReactDatez extends Component {
         const years = []
 
         for (let i = this.state.visibleYear.format('YYYY'); i > (this.state.visibleYear.format('YYYY') - 12); i -= 1) {
-            years.push(<a href="" className="rdatez-year" key={`years-${i}`} onClick={e => this.clickYear(e, i)}>{i}</a>)
+            years.push(<button className="rdatez-year" key={`years-${i}`} onClick={e => this.clickYear(e, i)}>{i}</button>)
         }
         return years
     }
@@ -342,7 +342,7 @@ class ReactDatez extends Component {
                 today: moment().startOf('day').diff(day, 'days') === 0
             })
 
-            calendar.push(<a href="" className={dayClasses} key={`${day.format('DMY')}-${i}`} onClick={e => this.clickDay(e, dayDate)} tabIndex="-1">{i}</a>)
+            calendar.push(<button className={dayClasses} key={`${day.format('DMY')}-${i}`} onClick={e => this.clickDay(e, dayDate)} tabIndex="-1">{i}</button>)
         }
 
         return <section className={`rdatez-month-days starts-on-${startsOn}`}>{calendar}</section>
