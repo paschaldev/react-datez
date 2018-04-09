@@ -269,6 +269,7 @@ class ReactDatez extends Component {
 
     clickDay(e, date) {
         e.preventDefault()
+        e.stopPropagation()
 
         if (this.isPast(date) && !this.props.allowPast) {
             return false
@@ -301,6 +302,7 @@ class ReactDatez extends Component {
 
     clickMonth(e, month) {
         e.preventDefault()
+        e.stopPropagation()
 
         this.setState({
             currentMonthYear: moment(this.state.currentMonthYear, 'M YYYY').format(`${month} YYYY`),
@@ -311,6 +313,7 @@ class ReactDatez extends Component {
 
     clickYear(e, year) {
         e.preventDefault()
+        e.stopPropagation()
 
         this.setState({
             currentMonthYear: moment(this.state.currentMonthYear, 'M YYYY').format(`M ${year}`),
