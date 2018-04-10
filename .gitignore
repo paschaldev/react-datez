@@ -15,7 +15,6 @@ tmp
 coverage
 
 # API keys
-.env
 
 # Dependency directory
 node_modules
@@ -31,3 +30,4 @@ Thumbs.db
 
 #secret keys
 *.pem
+config.bat
