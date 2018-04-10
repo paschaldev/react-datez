@@ -80,7 +80,7 @@ class ReactDatez extends Component {
         const input = this.props.input || {}
 
         const currentMonthYear = this.getCurrentMonthYear(this.props)
-        console.log(this.dateInput, this.dateInput.clientHeight)
+        console.log(this.dateInput, 'Test', this.dateInput.clientHeight)
 
         this.setState({
             selectedDate: (input.value && moment(input.value, this.props.dateFormat).isValid()) ? moment(input.value, this.props.dateFormat) : '',
